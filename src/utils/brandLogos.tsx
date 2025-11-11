@@ -1,17 +1,14 @@
 import { Car } from 'lucide-react';
 import React from 'react';
 
-// Import brand logos
+// Import brand logos (SVG files downloaded successfully)
 import BMWLogo from '@/assets/logos/bmw.svg';
 import AudiLogo from '@/assets/logos/audi.svg';
-import MercedesLogo from '@/assets/logos/mercedes.png';
 import VolvoLogo from '@/assets/logos/volvo.svg';
-import LexusLogo from '@/assets/logos/lexus.png';
 import PorscheLogo from '@/assets/logos/porsche.svg';
 import TeslaLogo from '@/assets/logos/tesla.svg';
 import LandRoverLogo from '@/assets/logos/land-rover.svg';
 import JaguarLogo from '@/assets/logos/jaguar.svg';
-import GenesisLogo from '@/assets/logos/genesis.png';
 import FiatLogo from '@/assets/logos/fiat.svg';
 import ChevroletLogo from '@/assets/logos/chevrolet.svg';
 import VolkswagenLogo from '@/assets/logos/volkswagen.svg';
@@ -24,10 +21,6 @@ import MitsubishiLogo from '@/assets/logos/mitsubishi.svg';
 import FordLogo from '@/assets/logos/ford.svg';
 import JeepLogo from '@/assets/logos/jeep.svg';
 import RamLogo from '@/assets/logos/ram.svg';
-import BYDLogo from '@/assets/logos/byd.png';
-import GWMLogo from '@/assets/logos/gwm.png';
-import CheryLogo from '@/assets/logos/chery.png';
-import JACLogo from '@/assets/logos/jac.png';
 import PeugeotLogo from '@/assets/logos/peugeot.svg';
 import CitroenLogo from '@/assets/logos/citroen.svg';
 import KiaLogo from '@/assets/logos/kia.svg';
@@ -35,45 +28,60 @@ import SubaruLogo from '@/assets/logos/subaru.svg';
 import SuzukiLogo from '@/assets/logos/suzuki.svg';
 import MiniLogo from '@/assets/logos/mini.svg';
 
-// Logos das marcas principais usando arquivos de logo reais
+// Componente wrapper para aplicar estilo monocromático uniforme
+const LogoWrapper = ({ src, alt }: { src: string; alt: string }) => (
+  <img 
+    src={src} 
+    alt={alt} 
+    className="w-16 h-16 object-contain grayscale brightness-0 opacity-70"
+  />
+);
+
+// Fallback para marcas sem logo (texto simples e consistente)
+const TextLogo = ({ text }: { text: string }) => (
+  <div className="w-16 h-16 flex items-center justify-center">
+    <span className="text-foreground/70 font-bold text-xs text-center">{text}</span>
+  </div>
+);
+
 export const BrandLogos: Record<string, React.ReactNode> = {
-  'BMW': <img src={BMWLogo} alt="BMW" className="w-full h-full object-contain p-2" />,
-  'AUDI': <img src={AudiLogo} alt="Audi" className="w-full h-full object-contain p-2" />,
-  'MERCEDES-BENZ': <img src={MercedesLogo} alt="Mercedes-Benz" className="w-full h-full object-contain p-2" />,
-  'MERCEDES': <img src={MercedesLogo} alt="Mercedes" className="w-full h-full object-contain p-2" />,
-  'VOLVO': <img src={VolvoLogo} alt="Volvo" className="w-full h-full object-contain p-2" />,
-  'LEXUS': <img src={LexusLogo} alt="Lexus" className="w-full h-full object-contain p-2" />,
-  'PORSCHE': <img src={PorscheLogo} alt="Porsche" className="w-full h-full object-contain p-2" />,
-  'TESLA': <img src={TeslaLogo} alt="Tesla" className="w-full h-full object-contain p-2" />,
-  'LAND ROVER': <img src={LandRoverLogo} alt="Land Rover" className="w-full h-full object-contain p-2" />,
-  'JAGUAR': <img src={JaguarLogo} alt="Jaguar" className="w-full h-full object-contain p-2" />,
-  'GENESIS': <img src={GenesisLogo} alt="Genesis" className="w-full h-full object-contain p-2" />,
-  'FIAT': <img src={FiatLogo} alt="Fiat" className="w-full h-full object-contain p-2" />,
-  'CHEVROLET': <img src={ChevroletLogo} alt="Chevrolet" className="w-full h-full object-contain p-2" />,
-  'VOLKSWAGEN': <img src={VolkswagenLogo} alt="Volkswagen" className="w-full h-full object-contain p-2" />,
-  'VW': <img src={VolkswagenLogo} alt="VW" className="w-full h-full object-contain p-2" />,
-  'RENAULT': <img src={RenaultLogo} alt="Renault" className="w-full h-full object-contain p-2" />,
-  'NISSAN': <img src={NissanLogo} alt="Nissan" className="w-full h-full object-contain p-2" />,
-  'TOYOTA': <img src={ToyotaLogo} alt="Toyota" className="w-full h-full object-contain p-2" />,
-  'HONDA': <img src={HondaLogo} alt="Honda" className="w-full h-full object-contain p-2" />,
-  'HYUNDAI': <img src={HyundaiLogo} alt="Hyundai" className="w-full h-full object-contain p-2" />,
-  'MITSUBISHI': <img src={MitsubishiLogo} alt="Mitsubishi" className="w-full h-full object-contain p-2" />,
-  'FORD': <img src={FordLogo} alt="Ford" className="w-full h-full object-contain p-2" />,
-  'JEEP': <img src={JeepLogo} alt="Jeep" className="w-full h-full object-contain p-2" />,
-  'RAM': <img src={RamLogo} alt="Ram" className="w-full h-full object-contain p-2" />,
-  'BYD': <img src={BYDLogo} alt="BYD" className="w-full h-full object-contain p-2" />,
-  'GWM': <img src={GWMLogo} alt="GWM" className="w-full h-full object-contain p-2" />,
-  'CAOA CHERY': <img src={CheryLogo} alt="Caoa Chery" className="w-full h-full object-contain p-2" />,
-  'CHERY': <img src={CheryLogo} alt="Chery" className="w-full h-full object-contain p-2" />,
-  'JAC MOTORS': <img src={JACLogo} alt="JAC Motors" className="w-full h-full object-contain p-2" />,
-  'JAC': <img src={JACLogo} alt="JAC" className="w-full h-full object-contain p-2" />,
-  'PEUGEOT': <img src={PeugeotLogo} alt="Peugeot" className="w-full h-full object-contain p-2" />,
-  'CITROËN': <img src={CitroenLogo} alt="Citroën" className="w-full h-full object-contain p-2" />,
-  'CITROEN': <img src={CitroenLogo} alt="Citroen" className="w-full h-full object-contain p-2" />,
-  'KIA': <img src={KiaLogo} alt="Kia" className="w-full h-full object-contain p-2" />,
-  'SUBARU': <img src={SubaruLogo} alt="Subaru" className="w-full h-full object-contain p-2" />,
-  'SUZUKI': <img src={SuzukiLogo} alt="Suzuki" className="w-full h-full object-contain p-2" />,
-  'MINI': <img src={MiniLogo} alt="Mini" className="w-full h-full object-contain p-2" />,
+  'BMW': <LogoWrapper src={BMWLogo} alt="BMW" />,
+  'AUDI': <LogoWrapper src={AudiLogo} alt="Audi" />,
+  'MERCEDES-BENZ': <TextLogo text="MERCEDES" />,
+  'MERCEDES': <TextLogo text="MERCEDES" />,
+  'VOLVO': <LogoWrapper src={VolvoLogo} alt="Volvo" />,
+  'LEXUS': <TextLogo text="LEXUS" />,
+  'PORSCHE': <LogoWrapper src={PorscheLogo} alt="Porsche" />,
+  'TESLA': <LogoWrapper src={TeslaLogo} alt="Tesla" />,
+  'LAND ROVER': <LogoWrapper src={LandRoverLogo} alt="Land Rover" />,
+  'JAGUAR': <LogoWrapper src={JaguarLogo} alt="Jaguar" />,
+  'GENESIS': <TextLogo text="GENESIS" />,
+  'FIAT': <LogoWrapper src={FiatLogo} alt="Fiat" />,
+  'CHEVROLET': <LogoWrapper src={ChevroletLogo} alt="Chevrolet" />,
+  'VOLKSWAGEN': <LogoWrapper src={VolkswagenLogo} alt="Volkswagen" />,
+  'VW': <LogoWrapper src={VolkswagenLogo} alt="VW" />,
+  'RENAULT': <LogoWrapper src={RenaultLogo} alt="Renault" />,
+  'NISSAN': <LogoWrapper src={NissanLogo} alt="Nissan" />,
+  'TOYOTA': <LogoWrapper src={ToyotaLogo} alt="Toyota" />,
+  'HONDA': <LogoWrapper src={HondaLogo} alt="Honda" />,
+  'HYUNDAI': <LogoWrapper src={HyundaiLogo} alt="Hyundai" />,
+  'MITSUBISHI': <LogoWrapper src={MitsubishiLogo} alt="Mitsubishi" />,
+  'FORD': <LogoWrapper src={FordLogo} alt="Ford" />,
+  'JEEP': <LogoWrapper src={JeepLogo} alt="Jeep" />,
+  'RAM': <LogoWrapper src={RamLogo} alt="Ram" />,
+  'BYD': <TextLogo text="BYD" />,
+  'GWM': <TextLogo text="GWM" />,
+  'CAOA CHERY': <TextLogo text="CHERY" />,
+  'CHERY': <TextLogo text="CHERY" />,
+  'JAC MOTORS': <TextLogo text="JAC" />,
+  'JAC': <TextLogo text="JAC" />,
+  'PEUGEOT': <LogoWrapper src={PeugeotLogo} alt="Peugeot" />,
+  'CITROËN': <LogoWrapper src={CitroenLogo} alt="Citroën" />,
+  'CITROEN': <LogoWrapper src={CitroenLogo} alt="Citroen" />,
+  'KIA': <LogoWrapper src={KiaLogo} alt="Kia" />,
+  'SUBARU': <LogoWrapper src={SubaruLogo} alt="Subaru" />,
+  'SUZUKI': <LogoWrapper src={SuzukiLogo} alt="Suzuki" />,
+  'MINI': <LogoWrapper src={MiniLogo} alt="Mini" />,
 };
 
 /**
