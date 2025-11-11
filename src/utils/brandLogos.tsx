@@ -35,12 +35,12 @@ import GWMLogo from '@/assets/logos/gwm.png';
 import CheryLogo from '@/assets/logos/chery.png';
 import JACLogo from '@/assets/logos/jac.png';
 
-// Componente wrapper para logos - SEM FILTROS CSS
+// Componente wrapper para logos - monocromático uniforme
 const LogoWrapper = ({ src, alt }: { src: string; alt: string }) => (
   <img 
     src={src} 
     alt={alt} 
-    className="w-16 h-16 object-contain"
+    className="w-16 h-16 object-contain grayscale opacity-80 brightness-0 invert"
   />
 );
 
