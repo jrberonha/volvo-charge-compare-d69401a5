@@ -4,7 +4,7 @@ import React from 'react';
 // Import brand logos
 import BMWLogo from '@/assets/logos/bmw.svg';
 import AudiLogo from '@/assets/logos/audi.svg';
-import MercedesLogo from '@/assets/logos/mercedes.png';
+import MercedesLogo from '@/assets/logos/mercedes.svg';
 import VolvoLogo from '@/assets/logos/volvo.svg';
 import LexusLogo from '@/assets/logos/lexus.png';
 import PorscheLogo from '@/assets/logos/porsche.svg';
@@ -13,7 +13,6 @@ import LandRoverLogo from '@/assets/logos/land-rover.svg';
 import JaguarLogo from '@/assets/logos/jaguar.svg';
 import GenesisLogo from '@/assets/logos/genesis.png';
 import FiatLogo from '@/assets/logos/fiat.svg';
-import ChevroletLogo from '@/assets/logos/chevrolet.svg';
 import VolkswagenLogo from '@/assets/logos/volkswagen.svg';
 import RenaultLogo from '@/assets/logos/renault.svg';
 import NissanLogo from '@/assets/logos/nissan.svg';
@@ -40,7 +39,8 @@ const LogoWrapper = ({ src, alt }: { src: string; alt: string }) => (
   <img 
     src={src} 
     alt={alt} 
-    className="w-16 h-16 object-contain grayscale"
+    className="w-16 h-16 object-contain"
+    style={{ filter: 'brightness(0)' }}
   />
 );
 
@@ -57,7 +57,6 @@ export const BrandLogos: Record<string, React.ReactNode> = {
   'JAGUAR': <LogoWrapper src={JaguarLogo} alt="Jaguar" />,
   'GENESIS': <LogoWrapper src={GenesisLogo} alt="Genesis" />,
   'FIAT': <LogoWrapper src={FiatLogo} alt="Fiat" />,
-  'CHEVROLET': <LogoWrapper src={ChevroletLogo} alt="Chevrolet" />,
   'VOLKSWAGEN': <LogoWrapper src={VolkswagenLogo} alt="Volkswagen" />,
   'VW': <LogoWrapper src={VolkswagenLogo} alt="VW" />,
   'RENAULT': <LogoWrapper src={RenaultLogo} alt="Renault" />,

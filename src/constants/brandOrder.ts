@@ -13,7 +13,6 @@ export const PREMIUM_BRANDS = [
 
 export const NATIONAL_BRANDS = [
   'FIAT',
-  'CHEVROLET',
   'VOLKSWAGEN',
   'RENAULT',
   'NISSAN',
