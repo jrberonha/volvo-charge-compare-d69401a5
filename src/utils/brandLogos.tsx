@@ -30,6 +30,10 @@ import KiaLogo from '@/assets/logos/kia.svg';
 import SubaruLogo from '@/assets/logos/subaru.svg';
 import SuzukiLogo from '@/assets/logos/suzuki.svg';
 import MiniLogo from '@/assets/logos/mini.svg';
+import BYDLogo from '@/assets/logos/byd.png';
+import GWMLogo from '@/assets/logos/gwm.png';
+import CheryLogo from '@/assets/logos/chery.png';
+import JACLogo from '@/assets/logos/jac.png';
 
 // Componente wrapper para aplicar estilo monocromático uniforme
 const LogoWrapper = ({ src, alt }: { src: string; alt: string }) => (
@@ -72,12 +76,12 @@ export const BrandLogos: Record<string, React.ReactNode> = {
   'FORD': <LogoWrapper src={FordLogo} alt="Ford" />,
   'JEEP': <LogoWrapper src={JeepLogo} alt="Jeep" />,
   'RAM': <LogoWrapper src={RamLogo} alt="Ram" />,
-  'BYD': <TextLogo text="BYD" />,
-  'GWM': <TextLogo text="GWM" />,
-  'CAOA CHERY': <TextLogo text="CHERY" />,
-  'CHERY': <TextLogo text="CHERY" />,
-  'JAC MOTORS': <TextLogo text="JAC" />,
-  'JAC': <TextLogo text="JAC" />,
+  'BYD': <LogoWrapper src={BYDLogo} alt="BYD" />,
+  'GWM': <LogoWrapper src={GWMLogo} alt="GWM" />,
+  'CAOA CHERY': <LogoWrapper src={CheryLogo} alt="Chery" />,
+  'CHERY': <LogoWrapper src={CheryLogo} alt="Chery" />,
+  'JAC MOTORS': <LogoWrapper src={JACLogo} alt="JAC Motors" />,
+  'JAC': <LogoWrapper src={JACLogo} alt="JAC" />,
   'PEUGEOT': <LogoWrapper src={PeugeotLogo} alt="Peugeot" />,
   'CITROËN': <LogoWrapper src={CitroenLogo} alt="Citroën" />,
   'CITROEN': <LogoWrapper src={CitroenLogo} alt="Citroen" />,

@@ -25,9 +25,26 @@ export function CompetitorSelection({ onSelect, onBack }: CompetitorSelectionPro
   const [loading, setLoading] = useState(true);
   const [searching, setSearching] = useState(false);
 
+  // Função para normalizar nomes de marcas (unifica variantes)
+  const normalizeBrandName = (brand: string): string => {
+    const normalized = brand.toUpperCase().trim();
+    
+    // Mapeamento de variantes -> marca principal
+    const brandMap: Record<string, string> = {
+      'VW': 'VOLKSWAGEN',
+      'MERCEDES': 'MERCEDES-BENZ',
+      'CAOA CHERY': 'CHERY',
+      'JAC MOTORS': 'JAC',
+      'CITROEN': 'CITROËN',
+    };
+    
+    return brandMap[normalized] || normalized;
+  };
+
   // Extrair marcas únicas e ordenadas
   const extractBrands = (vehicles: CompetitorVehicle[]): string[] => {
-    const uniqueBrands = Array.from(new Set(vehicles.map(v => v.marca)));
+    const normalizedBrands = vehicles.map(v => normalizeBrandName(v.marca));
+    const uniqueBrands = Array.from(new Set(normalizedBrands));
     return sortBrandsByTier(uniqueBrands);
   };
 
@@ -84,7 +101,9 @@ export function CompetitorSelection({ onSelect, onBack }: CompetitorSelectionPro
 
   const handleBrandSelect = (brand: string) => {
     setSelectedBrand(brand);
-    const filtered = uniqueModels.filter(v => v.marca === brand);
+    const filtered = uniqueModels.filter(v => 
+      normalizeBrandName(v.marca) === brand
+    );
     setFilteredResults(filtered);
     setView('models');
   };
