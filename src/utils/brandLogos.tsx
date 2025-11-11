@@ -4,11 +4,14 @@ import React from 'react';
 // Import brand logos (SVG files downloaded successfully)
 import BMWLogo from '@/assets/logos/bmw.svg';
 import AudiLogo from '@/assets/logos/audi.svg';
+import MercedesLogo from '@/assets/logos/mercedes.svg';
 import VolvoLogo from '@/assets/logos/volvo.svg';
+import LexusLogo from '@/assets/logos/lexus.png';
 import PorscheLogo from '@/assets/logos/porsche.svg';
 import TeslaLogo from '@/assets/logos/tesla.svg';
 import LandRoverLogo from '@/assets/logos/land-rover.svg';
 import JaguarLogo from '@/assets/logos/jaguar.svg';
+import GenesisLogo from '@/assets/logos/genesis.png';
 import FiatLogo from '@/assets/logos/fiat.svg';
 import ChevroletLogo from '@/assets/logos/chevrolet.svg';
 import VolkswagenLogo from '@/assets/logos/volkswagen.svg';
@@ -47,15 +50,15 @@ const TextLogo = ({ text }: { text: string }) => (
 export const BrandLogos: Record<string, React.ReactNode> = {
   'BMW': <LogoWrapper src={BMWLogo} alt="BMW" />,
   'AUDI': <LogoWrapper src={AudiLogo} alt="Audi" />,
-  'MERCEDES-BENZ': <TextLogo text="MERCEDES" />,
-  'MERCEDES': <TextLogo text="MERCEDES" />,
+  'MERCEDES-BENZ': <LogoWrapper src={MercedesLogo} alt="Mercedes-Benz" />,
+  'MERCEDES': <LogoWrapper src={MercedesLogo} alt="Mercedes" />,
   'VOLVO': <LogoWrapper src={VolvoLogo} alt="Volvo" />,
-  'LEXUS': <TextLogo text="LEXUS" />,
+  'LEXUS': <LogoWrapper src={LexusLogo} alt="Lexus" />,
   'PORSCHE': <LogoWrapper src={PorscheLogo} alt="Porsche" />,
   'TESLA': <LogoWrapper src={TeslaLogo} alt="Tesla" />,
   'LAND ROVER': <LogoWrapper src={LandRoverLogo} alt="Land Rover" />,
   'JAGUAR': <LogoWrapper src={JaguarLogo} alt="Jaguar" />,
-  'GENESIS': <TextLogo text="GENESIS" />,
+  'GENESIS': <LogoWrapper src={GenesisLogo} alt="Genesis" />,
   'FIAT': <LogoWrapper src={FiatLogo} alt="Fiat" />,
   'CHEVROLET': <LogoWrapper src={ChevroletLogo} alt="Chevrolet" />,
   'VOLKSWAGEN': <LogoWrapper src={VolkswagenLogo} alt="Volkswagen" />,
