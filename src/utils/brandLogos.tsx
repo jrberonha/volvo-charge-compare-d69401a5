@@ -40,7 +40,7 @@ const LogoWrapper = ({ src, alt }: { src: string; alt: string }) => (
   <img 
     src={src} 
     alt={alt} 
-    className="w-16 h-16 object-contain grayscale opacity-80 brightness-0 invert"
+    className="w-16 h-16 object-contain grayscale"
   />
 );
 
