@@ -32,7 +32,7 @@ import SuzukiLogo from '@/assets/logos/suzuki.svg';
 import MiniLogo from '@/assets/logos/mini.svg';
 import BYDLogo from '@/assets/logos/byd.png';
 import GWMLogo from '@/assets/logos/gwm.png';
-import CheryLogo from '@/assets/logos/chery.png';
+import CheryLogo from '@/assets/logos/chery.svg';
 import JACLogo from '@/assets/logos/jac.png';
 
 // Componente wrapper para aplicar estilo monocromático uniforme
