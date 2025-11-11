@@ -4,9 +4,10 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Search, Car } from 'lucide-react';
+import { ArrowLeft, Search } from 'lucide-react';
 import { deduplicateVehicles } from '@/utils/vehicleDeduplication';
 import { sortBrandsByTier } from '@/constants/brandOrder';
+import { getBrandLogo } from '@/utils/brandLogos';
 
 interface CompetitorSelectionProps {
   onSelect: (competitor: CompetitorVehicle) => void;
@@ -173,7 +174,9 @@ export function CompetitorSelection({ onSelect, onBack }: CompetitorSelectionPro
                 className="group cursor-pointer hover:shadow-medium transition-all duration-200 border-2 hover:border-accent p-6 text-center h-32 flex flex-col items-center justify-center"
                 onClick={() => handleBrandSelect(brand)}
               >
-                <Car className="h-10 w-10 text-primary mb-2 group-hover:scale-110 transition-transform" />
+                <div className="mb-2 group-hover:scale-110 transition-transform">
+                  {getBrandLogo(brand)}
+                </div>
                 <h3 className="text-sm font-bold text-foreground leading-tight">
                   {brand}
                 </h3>
